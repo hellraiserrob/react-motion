@@ -19,6 +19,9 @@ class Nav extends Component {
             <li>
                 <Link to="/example4">Ex4</Link>
             </li>
+            <li>
+                <Link to="/example5">Ex5</Link>
+            </li>
         </ul>
         
       </nav>

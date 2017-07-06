@@ -6,10 +6,10 @@
 html, body {
   margin: 0;
   padding: 0;
-  width: 100%;
+  /*width: 100%;
   height: 100%;
 
-  overflow: hidden;
+  overflow: hidden;*/
 
 }
 
@@ -50,6 +50,31 @@ body {
   overflow: hidden;
   /*border-radius: 2px;*/
 }
+
+
+
+
+.square {
+  background: #000;
+  width: 0;
+  height: 0;
+  margin: 0;
+  overflow: hidden;
+  color: #fff;
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 nav {
   margin:0 0 20px 0;

@@ -15,6 +15,7 @@ import Example1 from './pages/example-1';
 import Example2 from './pages/example-2';
 import Example3 from './pages/example-3';
 import Example4 from './pages/example-4';
+import Example5 from './pages/example-5';
 
 
 class App extends Component {
@@ -33,6 +34,7 @@ class App extends Component {
             <Route path="/example2" component={Example2} />
             <Route path="/example3" component={Example3} />
             <Route path="/example4" component={Example4} />
+            <Route path="/example5" component={Example5} />
 
           </div>
 

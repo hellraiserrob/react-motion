@@ -34,7 +34,7 @@ class About extends Component {
 
     scroll(e) {
 
-        console.log(e);
+        console.log(e.deltaY);
 
         let isOn = this.state.isOn;
 
@@ -62,12 +62,12 @@ class About extends Component {
 
 
     bind() {
-        console.log('removeBind');
+        
         window.addEventListener('wheel', this.scroll);
     }
 
     removeBind() {
-        console.log('bind');
+        
         window.removeEventListener('wheel', this.scroll);
     }
 
