@@ -28,6 +28,12 @@ class Nav extends Component {
             <li>
                 <Link to="/example7">Ex7</Link>
             </li>
+            <li>
+                <Link to="/example8">Ex8</Link>
+            </li>
+            <li>
+                <Link to="/example9">Ex9</Link>
+            </li>
         </ul>
         
       </nav>

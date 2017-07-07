@@ -34,6 +34,10 @@ class ex6 extends Component {
         return (
             <div>
 
+                <p>
+                    Low level transition-group hooks
+                </p>
+
                 <TransitionGroup>
                     {this.state.isVisible && <Square />}
                 </TransitionGroup>

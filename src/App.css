@@ -28,14 +28,15 @@ body {
 
 .btn {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 12px 15px;
   background: #00b5ef;
   color: #fff;
   border:0;
   cursor: pointer;
-  font-weight: 500;
-  text-transform: uppercase;
-  border-radius: 20px;
+  font-weight: 600;
+  /*text-transform: uppercase;*/
+  border-radius: 2px;
+  font-size: 15px;
 
   transition: all 0.3s;
 }
@@ -54,7 +55,7 @@ body {
 
 
 .box {
-  background: #000;
+  background: #333;
   height: 10px;
   text-align: center;
   margin: 0 0 20px 0;
@@ -66,7 +67,7 @@ body {
 
 
 .square {
-  background: #000;
+  background: #333;
   width: 100px;
   height: 100px;
   margin: 0 0 20px 0;
@@ -77,7 +78,14 @@ body {
 
 
 
-
+.circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #333;
+  text-indent: -6000px;
+  margin: 0 0 20px 0;
+}
 
 
 
@@ -101,4 +109,47 @@ nav ul {
 nav li {
   display: inline-block;
   margin: 0 10px 0 0;
+}
+
+.route {
+  border: 1px solid red;
+}
+
+
+
+.example-enter {
+  opacity: 0.01;
+  border: 1px solid red;
+  display: block;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: all 2000ms ease-in;
+  border: 1px solid red;
+  display: block;
+}
+
+.example-leave {
+  opacity: 1;
+  display: block;
+}
+
+.example-leave.example-leave-active {
+  display: block;
+  opacity: 0.01;
+  transition: all 2000ms ease-out;
+}
+
+
+.mask {
+  position: absolute;
+  top:0;
+  left:0;
+  background: #333;
+  z-index: 1;
+  width: 10px;
+  height: 0;
+
+  
 }
