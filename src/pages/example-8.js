@@ -3,7 +3,9 @@ import Circle from '../common/primatives/circle2'
 import ReactDOM from 'react-dom'
 import { TimelineMax, Power4 } from 'gsap';
 
-class ex6 extends Component {
+// import AnimatedWrapper from '../common/wrappers/AnimatedWrapper'
+
+class Page extends Component {
 
     constructor(props) {
 
@@ -17,7 +19,7 @@ class ex6 extends Component {
             }]
         }
 
-    }
+    }    
 
     componentDidMount(){
 
@@ -42,11 +44,15 @@ class ex6 extends Component {
 
     }
 
+
     render() {
 
 
         return (
             <div>
+
+                <div className="mask" ref={(mask) => { this.mask = mask; }} ></div>
+
                 <p>
                     Greensock timelineMax example
                 </p>
@@ -63,4 +69,5 @@ class ex6 extends Component {
     }
 }
 
-export default ex6;
+// const ex8 = AnimatedWrapper(Page);
+export default Page;

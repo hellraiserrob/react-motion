@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-
-import Error from '../common/alerts/error';
+import AnimatedWrapper from '../common/wrappers/AnimatedWrapper'
+// import Error from '../common/alerts/error';
 
 import classNames from 'classnames';
 
 
-class Landing extends Component {
+class Page extends Component {
 
   constructor(props) {
 
@@ -36,23 +36,30 @@ class Landing extends Component {
   render() {
 
     let alertClass = classNames({
-      error: true,
       animated: true,
       'bounce': this.state.isOn,
     });
     
     let btnClass = classNames({
-      btn: true,      
+      button: true,      
       disabled: !this.state.isOn,
     });
 
     return (
       <div>
-        <Error msg="This is the alert" css={alertClass} />
+        <h4>Class toggle</h4>
+
+        <p>
+          A simple class toggle to introduce an animation
+        </p>
+
+        <blockquote className={alertClass}>This is a quote</blockquote>
+
         <a onClick={this.toggle} className={btnClass}>toggle</a>
       </div>
     );
   }
 }
 
-export default Landing;
+const Wrapper = AnimatedWrapper(Page);
+export default Wrapper;

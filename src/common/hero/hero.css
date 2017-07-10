@@ -1,0 +1,39 @@
+.hero {
+    height: 600px;
+    overflow: hidden;
+    margin: 0 0 20px 0;
+    position: relative
+}
+
+.hero .text {
+    position: absolute;
+    top:20px;
+    left:0;
+    z-index: 1;
+
+
+    transition: 1s cubic-bezier(1, -1, 0, 2);
+    transform: translateX(50px);
+    opacity: 0;
+}
+
+
+.hero.ready .text {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.hero img {
+    opacity:0;
+    transition: 1s cubic-bezier(1, -1, 0, 2);
+    clip-path: inset(0 0 0 0);
+
+}
+
+.hero img.loaded {
+    opacity: 1;
+}
+
+.hero img.masked {
+    clip-path: inset(5% 4% 15% 33%);    
+}

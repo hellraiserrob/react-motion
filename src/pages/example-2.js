@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Motion, spring } from 'react-motion';
+import AnimatedWrapper from '../common/wrappers/AnimatedWrapper'
 
-
-class About extends Component {
+class Page extends Component {
 
   constructor(props) {
 
@@ -51,11 +51,12 @@ class About extends Component {
 
         </Motion>
 
-        <a onClick={this.toggle} className="btn" >toggle</a>
+        <a onClick={this.toggle} className="button" >toggle</a>
 
       </div>
     );
   }
 }
 
-export default About;
+const Wrapper = AnimatedWrapper(Page);
+export default Wrapper;

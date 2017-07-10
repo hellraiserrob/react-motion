@@ -1,0 +1,45 @@
+
+
+.imageWrapper {
+    width: 600px;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 0 20px 0;
+}
+
+.image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left:0;
+    right:0;
+    transition: all 0.3s;
+    overflow: hidden;
+}
+
+.imageWrapper:hover .image {
+    top: 20px;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+}
+
+.image img {
+    transition: all 0.3s;
+
+    /*position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);*/
+
+    opacity: 0;
+}
+
+.image img.loaded {
+    opacity: 1;
+}
+
+.imageWrapper:hover .image img{
+    transform: scale(1.1);
+}

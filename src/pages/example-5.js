@@ -39,7 +39,8 @@ class ex5 extends Component {
         // triggered when c's gone. Keeping c until its width/height reach 0.
         return {
             width: spring(0),
-            height: spring(0)
+            height: spring(0),
+            marginBottom: spring(0)
         };
     }
 
@@ -64,7 +65,7 @@ class ex5 extends Component {
             <TransitionMotion willLeave={this.willLeave}
                 styles={this.state.boxes.map(item => ({
                     key: item.key,
-                    style: { width: item.size, height: item.size }
+                    style: { width: item.size, height: item.size, marginBottom: 20 }
                 }))}>
 
                 {interpolatedStyles =>

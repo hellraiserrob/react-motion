@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
 class Nav extends Component {
@@ -8,31 +8,37 @@ class Nav extends Component {
       <nav>
         <ul>
             <li>
-                <Link to="/example1">Ex1</Link>
+                <NavLink to="/example1" activeClassName="active">Ex1</NavLink>
             </li>
             <li>
-                <Link to="/example2">Ex2</Link>
+                <NavLink to="/example2" activeClassName="active">Ex2</NavLink>
             </li>
             <li>
-                <Link to="/example3">Ex3</Link>
+                <NavLink to="/example3" activeClassName="active">Ex3</NavLink>
             </li>
             <li>
-                <Link to="/example4">Ex4</Link>
+                <NavLink to="/example4" activeClassName="active">Ex4</NavLink>
             </li>
             <li>
-                <Link to="/example5">Ex5</Link>
+                <NavLink to="/example5" activeClassName="active">Ex5</NavLink>
             </li>
             <li>
-                <Link to="/example6">Ex6</Link>
+                <NavLink to="/example6" activeClassName="active">Ex6</NavLink>
             </li>
             <li>
-                <Link to="/example7">Ex7</Link>
+                <NavLink to="/example7" activeClassName="active">Ex7</NavLink>
             </li>
             <li>
-                <Link to="/example8">Ex8</Link>
+                <NavLink to="/example8" activeClassName="active">Ex8</NavLink>
             </li>
             <li>
-                <Link to="/example9">Ex9</Link>
+                <NavLink to="/example9" activeClassName="active">Ex9</NavLink>
+            </li>
+            <li>
+                <NavLink to="/example10" activeClassName="active">Ex10</NavLink>
+            </li>
+            <li>
+                <NavLink to="/example11" activeClassName="active">Ex11</NavLink>
             </li>
         </ul>
         

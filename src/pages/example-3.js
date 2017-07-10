@@ -67,7 +67,7 @@ class About extends Component {
 
   
 
-        <a onClick={this.toggle} className="btn" >toggle</a>
+        <a onClick={this.toggle} className="button">toggle</a>
 
       </div>
     );
