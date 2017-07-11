@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 // import { TransitionMotion, spring } from 'react-motion';
 
 import TransitionGroup from 'react-addons-transition-group' // ES6
+import AnimatedWrapper from '../common/wrappers/AnimatedWrapper'
 
 import Square from '../common/primatives/square';
 
 
-class ex6 extends Component {
+class Page extends Component {
 
 
     constructor(props) {
@@ -48,4 +49,5 @@ class ex6 extends Component {
     }
 }
 
-export default ex6;
+const Wrapper = AnimatedWrapper(Page);
+export default Wrapper;

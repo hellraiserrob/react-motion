@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import Circle from '../common/primatives/circle'
 
-class ex6 extends Component {
+import AnimatedWrapper from '../common/wrappers/AnimatedWrapper'
 
-    
+class Page extends Component {
+
 
     render() {
 
@@ -19,4 +20,5 @@ class ex6 extends Component {
     }
 }
 
-export default ex6;
+const Wrapper = AnimatedWrapper(Page);
+export default Wrapper;

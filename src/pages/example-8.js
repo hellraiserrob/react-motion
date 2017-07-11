@@ -3,7 +3,7 @@ import Circle from '../common/primatives/circle2'
 import ReactDOM from 'react-dom'
 import { TimelineMax, Power4 } from 'gsap';
 
-// import AnimatedWrapper from '../common/wrappers/AnimatedWrapper'
+import AnimatedWrapper from '../common/wrappers/AnimatedWrapper'
 
 class Page extends Component {
 
@@ -69,5 +69,5 @@ class Page extends Component {
     }
 }
 
-// const ex8 = AnimatedWrapper(Page);
-export default Page;
+const Wrapper = AnimatedWrapper(Page);
+export default Wrapper;

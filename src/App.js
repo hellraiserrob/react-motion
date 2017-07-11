@@ -71,10 +71,91 @@ class App extends Component {
                       {match && <Example2 {...rest} />}
                     </TransitionGroup>
                   )} />
+                
+                <Route
+                  exact
+                  path="/example3"
+                  children={({ match, ...rest }) => (
+                    <TransitionGroup component={firstChild}>
+                      {match && <Example3 {...rest} />}
+                    </TransitionGroup>
+                  )} />
+
+                <Route
+                  exact
+                  path="/example4"
+                  children={({ match, ...rest }) => (
+                    <TransitionGroup component={firstChild}>
+                      {match && <Example4 {...rest} />}
+                    </TransitionGroup>
+                  )} />
+
+                <Route
+                  exact
+                  path="/example5"
+                  children={({ match, ...rest }) => (
+                    <TransitionGroup component={firstChild}>
+                      {match && <Example5 {...rest} />}
+                    </TransitionGroup>
+                  )} />
+                
+                <Route
+                  exact
+                  path="/example6"
+                  children={({ match, ...rest }) => (
+                    <TransitionGroup component={firstChild}>
+                      {match && <Example6 {...rest} />}
+                    </TransitionGroup>
+                  )} />
+
+                <Route
+                  exact
+                  path="/example7"
+                  children={({ match, ...rest }) => (
+                    <TransitionGroup component={firstChild}>
+                      {match && <Example7 {...rest} />}
+                    </TransitionGroup>
+                  )} />
+                
+                <Route
+                  exact
+                  path="/example8"
+                  children={({ match, ...rest }) => (
+                    <TransitionGroup component={firstChild}>
+                      {match && <Example8 {...rest} />}
+                    </TransitionGroup>
+                  )} />
+
+                <Route
+                  exact
+                  path="/example9"
+                  children={({ match, ...rest }) => (
+                    <TransitionGroup component={firstChild}>
+                      {match && <Example9 {...rest} />}
+                    </TransitionGroup>
+                  )} />
+
+                <Route
+                  exact
+                  path="/example10"
+                  children={({ match, ...rest }) => (
+                    <TransitionGroup component={firstChild}>
+                      {match && <Example10 {...rest} />}
+                    </TransitionGroup>
+                  )} />
+                
+                <Route
+                  exact
+                  path="/example11"
+                  children={({ match, ...rest }) => (
+                    <TransitionGroup component={firstChild}>
+                      {match && <Example11 {...rest} />}
+                    </TransitionGroup>
+                  )} />
 
 
-                <Route path="/example3" component={Example3} />
-                <Route path="/example4" component={Example4} />
+                
+                { /* <Route path="/example4" component={Example4} />
                 <Route path="/example5" component={Example5} />
                 <Route path="/example6" component={Example6} />
                 <Route path="/example7" component={Example7} />
@@ -82,6 +163,7 @@ class App extends Component {
                 <Route path="/example9" component={Example9} />
                 <Route path="/example10" component={Example10} />
                 <Route path="/example11" component={Example11} />
+                */ }
 
               </div>
 

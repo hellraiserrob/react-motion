@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-// import { TweenMax, Power0 } from 'gsap'
+import { TweenMax, Power4 } from 'gsap'
 
 const AnimatedWrapper = WrappedComponent => class AnimatedWrapper extends Component {
 
@@ -14,14 +14,20 @@ const AnimatedWrapper = WrappedComponent => class AnimatedWrapper extends Compon
 
     }
     
-    // setMask(height) {
+    animateMask(maskStyles) {
 
-    //     TweenMax.to(this.mask, 1, {
-    //         height: height,
-    //         ease: Power0.easeNone
-    //     })
+        TweenMax.to(this.mask, 0.5, {
+            height: maskStyles.height,
+            ease: Power4.easeIn
+        })
 
-    // }
+    }
+
+    setMask(maskStyles) {
+
+        TweenMax.set(this.mask, maskStyles)
+
+    }
 
 
     // componentDidMount() {
@@ -31,6 +37,10 @@ const AnimatedWrapper = WrappedComponent => class AnimatedWrapper extends Compon
     show(){
         this.setState({
             wrapperDisplay: 'block'
+        })
+
+        this.animateMask({
+            height: 0
         })
     }
 
@@ -49,23 +59,38 @@ const AnimatedWrapper = WrappedComponent => class AnimatedWrapper extends Compon
     }
     componentWillEnter(cb) {
         console.log('componentWillEnter')
+
         
         setTimeout(() => {
+
+            this.setMask({
+                height: '100%'
+            })
+
             this.show()
+
+            this.animateMask({
+                height: 0
+            })
+
+
             cb();
-        }, 2100);
+        }, 600);
 
     }
 
     componentWillLeave(cb) {
 
         console.log('componentWillLeave');
-        // this.setMask(0);
+
+        this.animateMask({
+            height: '100%'
+        });
 
         setTimeout(() => {
             this.hide()
             cb();
-        }, 2000);
+        }, 600);
     }
 
 
@@ -78,15 +103,20 @@ const AnimatedWrapper = WrappedComponent => class AnimatedWrapper extends Compon
 
         return (
 
-            <div style={wrapperStyle} className="wrapper">
-
-                <h6>
-                    animationWrapper
-                </h6>
-
+            <div>
+                
                 <div className="mask" ref={(mask) => { this.mask = mask; }} ></div>
 
-                <WrappedComponent {...this.props} />
+                <div style={wrapperStyle} className="wrapper">
+
+                    <h6>
+                        animationWrapper
+                    </h6>
+
+
+                    <WrappedComponent {...this.props} />
+
+                </div>
 
             </div>
 

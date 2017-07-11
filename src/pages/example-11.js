@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 //import { TweenMax, Power0 } from 'gsap'
 
 
-// import AnimatedWrapper from '../common/wrappers/AnimatedWrapper'
+import AnimatedWrapper from '../common/wrappers/AnimatedWrapper'
 
 import Hero from '../common/hero/hero'
 
@@ -49,4 +49,5 @@ class Page extends Component {
     }
 }
 
-export default Page;
+const Wrapper = AnimatedWrapper(Page);
+export default Wrapper;

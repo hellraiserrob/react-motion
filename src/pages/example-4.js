@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Motion, spring } from 'react-motion';
 
+import AnimatedWrapper from '../common/wrappers/AnimatedWrapper'
 
-class About extends Component {
+class Page extends Component {
 
     constructor(props) {
 
@@ -99,4 +100,5 @@ class About extends Component {
     }
 }
 
-export default About;
+const Wrapper = AnimatedWrapper(Page);
+export default Wrapper;

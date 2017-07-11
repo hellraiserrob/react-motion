@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { TransitionMotion, spring } from 'react-motion';
 
+import AnimatedWrapper from '../common/wrappers/AnimatedWrapper'
 
-class ex5 extends Component {
+class Page extends Component {
 
     constructor(props) {
 
@@ -82,4 +83,5 @@ class ex5 extends Component {
     }
 }
 
-export default ex5;
+const Wrapper = AnimatedWrapper(Page);
+export default Wrapper;
