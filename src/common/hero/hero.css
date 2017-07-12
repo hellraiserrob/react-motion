@@ -13,14 +13,14 @@
 
 
     transition: 1s cubic-bezier(1, -1, 0, 2);
-    transform: translateX(50px);
+    transform: translateY(75px);
     opacity: 0;
 }
 
 
 .hero.ready .text {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
 }
 
 .hero img {
@@ -35,5 +35,5 @@
 }
 
 .hero img.masked {
-    clip-path: inset(5% 4% 15% 33%);    
+    clip-path: inset(5% 4% 45% 33%);    
 }

@@ -1,0 +1,40 @@
+.more {
+    position: fixed;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
+}
+
+.more img {
+
+    display: block;
+
+    transition: 1s cubic-bezier(1, -1, 0, 2);
+    animation-name: more;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+
+}
+
+
+@keyframes more {
+
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+}
+

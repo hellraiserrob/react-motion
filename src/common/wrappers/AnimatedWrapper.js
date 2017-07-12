@@ -3,8 +3,8 @@ import { TweenMax, Power4 } from 'gsap'
 
 const AnimatedWrapper = WrappedComponent => class AnimatedWrapper extends Component {
 
-    
-    constructor(props){
+
+    constructor(props) {
 
         super(props)
 
@@ -13,11 +13,13 @@ const AnimatedWrapper = WrappedComponent => class AnimatedWrapper extends Compon
         }
 
     }
-    
+
     animateMask(maskStyles) {
 
         TweenMax.to(this.mask, 0.5, {
-            height: maskStyles.height,
+            // height: maskStyles.height,
+            top: maskStyles.top,
+            bottom: maskStyles.bottom,
             ease: Power4.easeIn
         })
 
@@ -34,17 +36,18 @@ const AnimatedWrapper = WrappedComponent => class AnimatedWrapper extends Compon
     //     console.log('componentDidMount');
     // }
 
-    show(){
+    show() {
+
         this.setState({
             wrapperDisplay: 'block'
         })
 
-        this.animateMask({
-            height: 0
-        })
+        // this.animateMask({
+        //     height: 0
+        // })
     }
 
-    hide(){
+    hide() {
         this.setState({
             wrapperDisplay: 'none'
         })
@@ -60,21 +63,30 @@ const AnimatedWrapper = WrappedComponent => class AnimatedWrapper extends Compon
     componentWillEnter(cb) {
         console.log('componentWillEnter')
 
-        
+
         setTimeout(() => {
 
             this.setMask({
-                height: '100%'
+                top: 0,
+                bottom: 0
             })
 
             this.show()
 
             this.animateMask({
-                height: 0
+                top: '100%',
+                bottom: 0
             })
 
-
             cb();
+
+            setTimeout(() => {
+                this.setMask({
+                    top: 0,
+                    bottom: '100%'
+                })
+            }, 500)
+
         }, 600);
 
     }
@@ -84,7 +96,8 @@ const AnimatedWrapper = WrappedComponent => class AnimatedWrapper extends Compon
         console.log('componentWillLeave');
 
         this.animateMask({
-            height: '100%'
+            top: 0,
+            bottom: 0
         });
 
         setTimeout(() => {
@@ -104,15 +117,10 @@ const AnimatedWrapper = WrappedComponent => class AnimatedWrapper extends Compon
         return (
 
             <div>
-                
+
                 <div className="mask" ref={(mask) => { this.mask = mask; }} ></div>
 
                 <div style={wrapperStyle} className="wrapper">
-
-                    <h6>
-                        animationWrapper
-                    </h6>
-
 
                     <WrappedComponent {...this.props} />
 

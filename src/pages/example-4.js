@@ -63,23 +63,28 @@ class Page extends Component {
 
 
     bind() {
-        
         window.addEventListener('wheel', this.scroll);
     }
 
     removeBind() {
-        
         window.removeEventListener('wheel', this.scroll);
     }
 
     render() {
 
 
-        let boxes = [1];
+        let boxes = [1, 2];
 
 
         return (
             <div>
+
+                <h4>Progress bar</h4>
+
+                <p>
+                    A mouse wheel binding example
+                </p>
+
                 {boxes.map((index) => {
 
                     let boxStyle = this.getStyle(index);
@@ -87,7 +92,11 @@ class Page extends Component {
                     return (
                         <Motion style={boxStyle} onRest={this.fin} key={index}>
 
-                            {interpolatingStyle => <div className="box" style={interpolatingStyle}></div>}
+                            {interpolatingStyle => 
+                                <div className="progress">
+                                    <div className="bar" style={interpolatingStyle}></div>
+                                </div>
+                            }
 
                         </Motion>
                     );

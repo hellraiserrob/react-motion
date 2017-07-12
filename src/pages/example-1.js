@@ -47,6 +47,7 @@ class Page extends Component {
 
     return (
       <div>
+        
         <h4>Class toggle</h4>
 
         <p>

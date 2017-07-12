@@ -1,12 +1,24 @@
 body {
   margin:0;
   padding:0;
+
+}
+
+html, body {
+
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  
 }
 
 
 .wrapper {
   /*transition: all 1s;*/
   /*opacity: 0;*/
+  padding-top: 100px;
+  width: 900px;
+  margin: 0 auto;
 }
 
 
@@ -52,7 +64,16 @@ header {
   /*background: #eee;*/
   /*border-bottom: 1px solid #ddd;*/
   padding: 15px 0;
-  margin: 0 0 30px 0;
+  /*margin: 0 0 30px 0;*/
+
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index: 10;
+
+
+
 } 
 
 
@@ -64,6 +85,7 @@ nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  text-align: center;
 }
 
 
@@ -76,6 +98,9 @@ nav li a{
   display: block;
   text-decoration: none;
   margin: 0 20px 0 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
 }
 
 nav li a.active {
@@ -89,10 +114,34 @@ nav li a.active {
   position: fixed;
   top:0;
   left:0;
-  background: #ddd;
-  z-index: 1;
-  width: 100%;
-  height: 0;
+  background: #eee;
+  z-index: 2;
+  /*width: 100%;
+  height: 0;*/
+
+  bottom: 100%;
+  right: 0;
 
   
+}
+
+
+
+.progress {
+  background: #eee;
+  height: 10px;
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+  /*box-shadow: inset 0 1px 1px #ddd;*/
+  margin: 0 0 30px 0;
+  /*border: 2px solid #9b4dca;*/
+}
+
+.progress .bar {
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  background: #9b4dca;
 }

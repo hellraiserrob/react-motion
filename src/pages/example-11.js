@@ -36,11 +36,8 @@ class Page extends Component {
 
         return (
             <div>
-                <h4>Hero</h4>
-
-                <p>An examle of a hero.</p>
-
-                <Hero src="https://unsplash.it/1000/800" width={1000} height={800} mask={this.state.mask} />
+                
+                <Hero src="https://unsplash.it/1000/800" width={1000} height={600} mask={this.state.mask} />
 
                 <button onClick={this.toggle}>Toggle</button>
                 

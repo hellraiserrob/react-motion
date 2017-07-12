@@ -1,0 +1,60 @@
+.carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    width: 100%;
+    height: 100%;
+}
+
+.carousel .track {
+    position: absolute;
+    top: 0;
+    left:0;
+
+    width: 100%;
+    height: 100%;
+}
+
+
+.carousel .slide {
+    position: relative;
+    width: 100%;
+    height: 100%;   
+}
+
+.carousel .slide .number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 200px;
+    font-weight: 300;
+}
+
+.carousel .pagination {
+    position: absolute;
+    top: 50%;
+    right: 50px;
+    transform: translateY(-50%);
+    z-index: 1;
+    list-style: none;
+    padding:0;
+    margin:0;
+    text-align: center;
+}
+
+.carousel .pagination li{
+    width: 6px;
+    height: 6px;
+    border-radius: 8px;
+    background: #000;
+    margin: 0 auto 25px auto;
+    text-indent: -6000px;
+    transition: ease 0.3s
+}
+
+.carousel .pagination li.active{
+    width: 12px;
+    height: 12px;
+}

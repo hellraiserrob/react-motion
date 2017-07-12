@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Motion, spring } from 'react-motion';
 import AnimatedWrapper from '../common/wrappers/AnimatedWrapper'
 
+// import Measure from 'react-measure'
+
 class Page extends Component {
 
   constructor(props) {
@@ -9,7 +11,8 @@ class Page extends Component {
     super(props);
 
     this.state = {
-      isOn: false
+      isOn: false,
+      maxWidth: 600
     };
 
     this.toggle = this.toggle.bind(this);
@@ -19,11 +22,12 @@ class Page extends Component {
 
   getStyle() {
 
-    let isOn = this.state.isOn;
-    let width = (isOn) ? 500 : 50;
+    let { isOn, maxWidth } = this.state;
+
+    let width = (isOn) ? maxWidth : 0;
 
     return {
-      width: spring(width, {stiffness: 150, damping: 15})
+      width: spring(width, { stiffness: 150, damping: 15 })
     }
   }
 
@@ -45,13 +49,25 @@ class Page extends Component {
     return (
       <div>
 
+
+        <h4>Progress bar</h4>
+
+        <p>
+          Simple transition of a progress bar
+        </p>
+
         <Motion style={boxStyle}>
 
-          {interpolatingStyle  => <div className="box" style={interpolatingStyle }></div>}
+          {interpolatingStyle =>
+            <div className="progress">
+              <div className="bar" style={interpolatingStyle}></div>
+            </div>
+          }
 
         </Motion>
 
         <a onClick={this.toggle} className="button" >toggle</a>
+
 
       </div>
     );

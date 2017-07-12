@@ -54,6 +54,13 @@ class Page extends Component {
 
     return (
       <div>
+
+        <h4>Progress bar</h4>
+
+        <p>
+            Multiple progress examples
+        </p>
+
         {boxes.map((index) => {
             
             let boxStyle = this.getStyle(index);
@@ -61,7 +68,11 @@ class Page extends Component {
             return (
                 <Motion style={boxStyle} onRest={this.fin} key={index}>
                     
-                    {interpolatingStyle  => <div className="box" style={interpolatingStyle }></div>}
+                    {interpolatingStyle  => 
+                      <div className="progress">
+                        <div className="bar" style={interpolatingStyle }></div>
+                      </div>
+                    }
 
                 </Motion>
             );
