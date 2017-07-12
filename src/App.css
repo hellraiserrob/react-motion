@@ -145,3 +145,39 @@ nav li a.active {
   left:0;
   background: #9b4dca;
 }
+
+
+path {
+  stroke: #9b4dca;
+  stroke-width: 10px;
+  fill: none;
+  visibility: visible;
+}
+
+
+
+#template, #path {
+  fill: none;
+}
+#template {
+  stroke-width: 5px;
+  stroke: #ccc;
+}
+#path {
+  stroke: #9b4dca;
+  stroke-width: 20px;
+  visibility: hidden;
+}
+
+.svgExample {
+  position: absolute;
+  top:50%;
+  left:50%;
+  width: 516px;
+  
+
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+}
+

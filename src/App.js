@@ -25,6 +25,7 @@ import Example9 from './pages/example-9';
 import Example10 from './pages/example-10';
 import Example11 from './pages/example-11';
 import Example12 from './pages/example-12';
+import Example13 from './pages/example-13';
 
 
 const firstChild = props => {
@@ -154,6 +155,15 @@ class App extends Component {
             children={({ match, ...rest }) => (
               <TransitionGroup component={firstChild}>
                 {match && <Example12 {...rest} />}
+              </TransitionGroup>
+            )} />
+          
+          <Route
+            exact
+            path="/example13"
+            children={({ match, ...rest }) => (
+              <TransitionGroup component={firstChild}>
+                {match && <Example13 {...rest} />}
               </TransitionGroup>
             )} />
 

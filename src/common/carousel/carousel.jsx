@@ -57,7 +57,7 @@ class Carousel extends Component {
         this.removeBind();
 
 
-        TweenMax.to(this.track, 0.75, {
+        TweenMax.to(this.track, 1, {
             top: -100 * this.state.active + '%',
             ease: Power4.easeIn
         })
