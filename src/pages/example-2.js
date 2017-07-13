@@ -50,7 +50,7 @@ class Page extends Component {
       <div>
 
 
-        <h4>Progress bar</h4>
+        <h1>Title</h1>
 
         <p>
           Simple transition of a progress bar

@@ -48,7 +48,7 @@ class Page extends Component {
     return (
       <div>
         
-        <h4>Class toggle</h4>
+        <h1>Title</h1>
 
         <p>
           A simple class toggle to introduce an animation

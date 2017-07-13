@@ -9,6 +9,8 @@ class Carousel extends Component {
 
         super(props);
 
+        this.slides = new Map()
+
         this.state = {
             active: 0,
             slides: [{
@@ -19,15 +21,61 @@ class Carousel extends Component {
             }, {
                 id: 2,
                 styles: {
+                    background: '#ccc'
+                }
+            }, {
+                id: 3,
+                styles: {
                     background: '#fff'
                 }
             }]
         };
 
+
+
+        this.shrink = this.shrink.bind(this);
+        this.move = this.move.bind(this);
+        this.expand = this.expand.bind(this);
+
         this.scroll = this.scroll.bind(this);
         this.bind = this.bind.bind(this);
         this.removeBind = this.removeBind.bind(this);
 
+
+    }
+
+
+    shrink() {
+
+        let slides = Array.from(this.slides.values())
+
+        TweenMax.to(slides, 0.75, {
+            scale: 0.8,
+            ease: Power4.easeIn,
+            onComplete: this.move
+        })
+
+    }
+
+    move() {
+
+        TweenMax.to(this.track, 0.75, {
+            top: -100 * this.state.active + '%',
+            ease: Power4.easeIn,
+            onComplete: this.expand
+        })
+
+    }
+
+    expand() {
+
+        let slides = Array.from(this.slides.values())
+
+        TweenMax.to(slides, 0.75, {
+            scale: 1,
+            ease: Power4.easeIn,
+            onComplete: this.bind
+        })
 
     }
 
@@ -54,20 +102,23 @@ class Carousel extends Component {
         });
 
 
-        this.removeBind();
+        this.removeBind()
 
 
-        TweenMax.to(this.track, 1, {
-            top: -100 * this.state.active + '%',
-            ease: Power4.easeIn
-        })
+
+        this.shrink()
+
+        // TweenMax.to(this.track, 0.75, {
+        //     top: -100 * this.state.active + '%',
+        //     ease: Power4.easeIn
+        // })
 
 
-        setTimeout(() => {
-            this.bind();
-        }, 1500)
+        // setTimeout(() => {
+        //     this.bind();
+        // }, 750)
 
-        console.log(this.state.active)
+        // console.log(this.state.active)
 
     }
 
@@ -75,7 +126,7 @@ class Carousel extends Component {
 
 
     componentDidMount() {
-        this.bind();
+        this.bind()
     }
 
     componentWillUnmount() {
@@ -102,7 +153,7 @@ class Carousel extends Component {
                 <div className="track" ref={(track) => { this.track = track }}>
 
                     {slides.map((item, index) => {
-                        return <div key={index} style={item.styles} className="slide"><div className="number">{item.id}.</div></div>
+                        return <div ref={slide => { this[`slide${index}`] = slide; this.slides.set(index, slide) }} key={index} style={item.styles} className="slide"><div className="number">{item.id}.</div></div>
                     })}
 
                 </div>

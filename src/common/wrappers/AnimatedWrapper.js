@@ -54,14 +54,14 @@ const AnimatedWrapper = WrappedComponent => class AnimatedWrapper extends Compon
     }
 
     componentWillAppear(cb) {
-        console.log('componentWillAppear')
+        // console.log('componentWillAppear')
 
         this.show();
 
         cb();
     }
     componentWillEnter(cb) {
-        console.log('componentWillEnter')
+        // console.log('componentWillEnter')
 
 
         setTimeout(() => {
@@ -93,7 +93,7 @@ const AnimatedWrapper = WrappedComponent => class AnimatedWrapper extends Compon
 
     componentWillLeave(cb) {
 
-        console.log('componentWillLeave');
+        // console.log('componentWillLeave');
 
         this.animateMask({
             top: 0,
@@ -103,7 +103,7 @@ const AnimatedWrapper = WrappedComponent => class AnimatedWrapper extends Compon
         setTimeout(() => {
             this.hide()
             cb();
-        }, 600);
+        }, 700);
     }
 
 

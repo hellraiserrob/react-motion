@@ -1,56 +1,79 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import classNames from 'classnames';
 
+import './navigation.css'
 
 class Nav extends Component {
-  render() {
-    return (
-      <nav>
-        <ul>
-            <li>
-                <NavLink to="/example1" activeClassName="active">Ex1</NavLink>
-            </li>
-            <li>
-                <NavLink to="/example2" activeClassName="active">Ex2</NavLink>
-            </li>
-            <li>
-                <NavLink to="/example3" activeClassName="active">Ex3</NavLink>
-            </li>
-            <li>
-                <NavLink to="/example4" activeClassName="active">Ex4</NavLink>
-            </li>
-            <li>
-                <NavLink to="/example5" activeClassName="active">Ex5</NavLink>
-            </li>
-            <li>
-                <NavLink to="/example6" activeClassName="active">Ex6</NavLink>
-            </li>
-            <li>
-                <NavLink to="/example7" activeClassName="active">Ex7</NavLink>
-            </li>
-            <li>
-                <NavLink to="/example8" activeClassName="active">Ex8</NavLink>
-            </li>
-            <li>
-                <NavLink to="/example9" activeClassName="active">Ex9</NavLink>
-            </li>
-            <li>
-                <NavLink to="/example10" activeClassName="active">Ex10</NavLink>
-            </li>
-            <li>
-                <NavLink to="/example11" activeClassName="active">Ex11</NavLink>
-            </li>
-            <li>
-                <NavLink to="/example12" activeClassName="active">Ex12</NavLink>
-            </li>
-            <li>
-                <NavLink to="/example13" activeClassName="active">Ex13</NavLink>
-            </li>
-        </ul>
-        
-      </nav>
-    );
-  }
-}
+
+	constructor(props){
+
+		super(props)
+
+		this.state = {
+			isOpen: false
+		}
+
+		this.toggle = this.toggle.bind(this)
+
+	}
+
+	toggle(){
+
+		let isOpen = this.state.isOpen
+
+		this.setState({
+			isOpen: !isOpen
+		})
+
+	}
+
+	render() {
+
+		let maskStyle = {
+			transform: this.state.isOpen ? 'translateX(0)' : 'translateX(-100%)'
+		}
+
+		let navStyle = {
+			transform: this.state.isOpen ? 'translateX(0)' : 'translateX(-300px)'
+		}
+
+		let toggleClass = classNames({
+			toggle: true,      
+			open: this.state.isOpen,
+		});
+
+		return (
+
+			<div>
+			
+				<div className="navMask" style={maskStyle}></div>
+
+				<nav style={navStyle}>
+
+					<a className={toggleClass} onClick={this.toggle}>
+						<span className="line"></span>
+						<span className="line line-bottom"></span>
+					</a>
+
+					<h6>Contents</h6>
+
+					<ul>
+						{this.props.routes.map((route, i)=> {
+							return <li key={i}>
+								<NavLink onClick={this.toggle} to={route.path} activeClassName="active">{route.title}</NavLink>
+							</li>
+						})}
+						
+					</ul>
+
+				</nav>
+			
+			</div>
+
+			
+			);
+		}
+	}
 
 export default Nav;

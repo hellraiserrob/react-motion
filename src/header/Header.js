@@ -7,21 +7,10 @@ class Header extends Component {
   render() {
     return (
       <header>
-
-        <div className="container">
-
-          <div className="row">
-
-            <div className="column">
               
-              { /*<H1 title="Animations" />*/ }
-              <Nav />
+        { /*<H1 title="Animations" />*/ }
+        <Nav routes={this.props.routes} />
 
-            </div>
-
-          </div>
-
-        </div>
       </header>
     );
   }

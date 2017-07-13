@@ -26,6 +26,71 @@ import Example10 from './pages/example-10';
 import Example11 from './pages/example-11';
 import Example12 from './pages/example-12';
 import Example13 from './pages/example-13';
+import Example14 from './pages/example-14';
+
+
+const routes = [{
+  path: '/',
+  title: '/',
+  component: Example1
+},{
+  path: '/ex1',
+  title: 'ex1',
+  component: Example1
+},{
+  path: '/ex2',
+  title: 'ex2',
+  component: Example2
+},{
+  path: '/ex3',
+  title: 'ex3',
+  component: Example3
+},{
+  path: '/ex4',
+  title: 'ex4',
+  component: Example4
+},{
+  path: '/ex5',
+  title: 'ex5',
+  component: Example5
+},{
+  path: '/ex6',
+  title: 'ex6',
+  component: Example6
+},{
+  path: '/ex7',
+  title: 'ex7',
+  component: Example7
+},{
+  path: '/ex8',
+  title: 'ex8',
+  component: Example8
+},{
+  path: '/ex9',
+  title: 'ex9',
+  component: Example9
+},{
+  path: '/ex10',
+  title: 'ex10',
+  component: Example10
+},{
+  path: '/ex11',
+  title: 'ex11',
+  component: Example11
+},{
+  path: '/ex12',
+  title: 'ex12',
+  component: Example12
+},{
+  path: '/ex13',
+  title: 'ex13',
+  component: Example13
+},{
+  path: '/ex14',
+  title: 'ex14',
+  component: Example14
+}]
+
 
 
 const firstChild = props => {
@@ -45,127 +110,22 @@ class App extends Component {
 
         <div className="App">
 
-          <Header />
+          <Header routes={routes} />
 
           { /*<Route path="/example1" component={Example1} />
               <Route path="/example2" component={Example2} />*/}
 
-          <Route
-            exact
-            path="/example1"
-            children={({ match, ...rest }) => (
-              <TransitionGroup component={firstChild}>
-                {match && <Example1 {...rest} />}
-              </TransitionGroup>
-            )} />
-
-          <Route
-            exact
-            path="/example2"
-            children={({ match, ...rest }) => (
-              <TransitionGroup component={firstChild}>
-                {match && <Example2 {...rest} />}
-              </TransitionGroup>
-            )} />
-
-          <Route
-            exact
-            path="/example3"
-            children={({ match, ...rest }) => (
-              <TransitionGroup component={firstChild}>
-                {match && <Example3 {...rest} />}
-              </TransitionGroup>
-            )} />
-
-          <Route
-            exact
-            path="/example4"
-            children={({ match, ...rest }) => (
-              <TransitionGroup component={firstChild}>
-                {match && <Example4 {...rest} />}
-              </TransitionGroup>
-            )} />
-
-          <Route
-            exact
-            path="/example5"
-            children={({ match, ...rest }) => (
-              <TransitionGroup component={firstChild}>
-                {match && <Example5 {...rest} />}
-              </TransitionGroup>
-            )} />
-
-          <Route
-            exact
-            path="/example6"
-            children={({ match, ...rest }) => (
-              <TransitionGroup component={firstChild}>
-                {match && <Example6 {...rest} />}
-              </TransitionGroup>
-            )} />
-
-          <Route
-            exact
-            path="/example7"
-            children={({ match, ...rest }) => (
-              <TransitionGroup component={firstChild}>
-                {match && <Example7 {...rest} />}
-              </TransitionGroup>
-            )} />
-
-          <Route
-            exact
-            path="/example8"
-            children={({ match, ...rest }) => (
-              <TransitionGroup component={firstChild}>
-                {match && <Example8 {...rest} />}
-              </TransitionGroup>
-            )} />
-
-          <Route
-            exact
-            path="/example9"
-            children={({ match, ...rest }) => (
-              <TransitionGroup component={firstChild}>
-                {match && <Example9 {...rest} />}
-              </TransitionGroup>
-            )} />
-
-          <Route
-            exact
-            path="/example10"
-            children={({ match, ...rest }) => (
-              <TransitionGroup component={firstChild}>
-                {match && <Example10 {...rest} />}
-              </TransitionGroup>
-            )} />
-
-          <Route
-            exact
-            path="/example11"
-            children={({ match, ...rest }) => (
-              <TransitionGroup component={firstChild}>
-                {match && <Example11 {...rest} />}
-              </TransitionGroup>
-            )} />
-
-          <Route
-            exact
-            path="/example12"
-            children={({ match, ...rest }) => (
-              <TransitionGroup component={firstChild}>
-                {match && <Example12 {...rest} />}
-              </TransitionGroup>
-            )} />
-          
-          <Route
-            exact
-            path="/example13"
-            children={({ match, ...rest }) => (
-              <TransitionGroup component={firstChild}>
-                {match && <Example13 {...rest} />}
-              </TransitionGroup>
-            )} />
+          {routes.map((item, i) => {
+            return <Route
+              key={i}
+              exact
+              path={item.path}
+              children={({ match, ...rest }) => (
+                <TransitionGroup component={firstChild}>
+                  {match && <item.component {...rest} />}
+                </TransitionGroup>
+              )} />
+          })}
 
 
         </div>
