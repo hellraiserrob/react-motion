@@ -8,4 +8,4 @@ Some simple example of anmation/motion with react, featuring:
 - TimelineMax animation
 - react-router v4 transition example
 
-https://hellraiserrob.github.io/reactMotion
+https://hellraiserrob.github.io/react-motion
