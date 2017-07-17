@@ -45,11 +45,11 @@ class Page extends Component {
     }
 
     render() {
-
+        
         return (
-
+            
             <div ref={(canvas) => { this.canvas = canvas }}></div>
-
+            
         );
     }
 }

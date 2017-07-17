@@ -27,6 +27,7 @@ import Example11 from './pages/example-11';
 import Example12 from './pages/example-12';
 import Example13 from './pages/example-13';
 import Example14 from './pages/example-14';
+import Example15 from './pages/example-15';
 
 
 const routes = [{
@@ -89,6 +90,10 @@ const routes = [{
   path: '/ex14',
   title: 'ex14',
   component: Example14
+},{
+  path: '/ex15',
+  title: 'ex15',
+  component: Example15
 }]
 
 

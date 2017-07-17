@@ -1,0 +1,18 @@
+.block-link {
+    display:block;
+    color: #fff;
+    padding: 20px;
+    background: #333;
+    height: 200px;
+}
+.block-link:hover {
+    color: #fff;
+}
+
+.block-link h2 {
+    margin:0 0 5px 0;
+}
+
+.block-link p {
+    margin:0;
+}

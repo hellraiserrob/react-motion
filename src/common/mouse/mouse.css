@@ -1,0 +1,27 @@
+.mouse {
+    width: 40px;
+    height: 60px;
+    border-radius: 20px;
+
+    border: 2px solid #9b4dca;
+    text-indent: -6000px;
+
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+.mouse .wheel {
+    position: absolute;
+    top: 10px;
+    bottom: 50px;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 1px;
+    background: #9b4dca;
+    
+}

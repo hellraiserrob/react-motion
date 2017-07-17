@@ -40,6 +40,7 @@ class Nav extends Component {
 
 		let toggleClass = classNames({
 			toggle: true,      
+			closed: !this.state.isOpen,      
 			open: this.state.isOpen,
 		});
 
